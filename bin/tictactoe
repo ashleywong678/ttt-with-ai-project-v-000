@@ -11,7 +11,7 @@ def start
 end
 
 if game.over?
-  puts "Play again? Type y for yes, n for no."
+  puts "Play again? (y/n)"
   again = gets.strip
     if again == "y"
       start
