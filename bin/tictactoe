@@ -10,12 +10,18 @@ def start
   end
 end
 
-if game.over?
-  puts "Play again? (y/n)"
-  again = gets.strip
-    if again == "y"
-      start
-    else
-      puts "Good game!"
+def new_game?
+  if game.over?
+    puts "Play again? (y/n)"
+    again = gets.strip
+      if again.downcase == "y"
+        start
+      elsif again.downcase == "n"
+        puts "Good game!"
+      else
+        puts "Error"
+        new_game?
+      end 
+      
     end
 end
