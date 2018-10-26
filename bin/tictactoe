@@ -2,20 +2,18 @@
 
 require_relative '../config/environment'
 
-def start
-  puts "Welcome to Tic Tac Toe!"
-  game = Game.new
-  until game.won?
-    game.play
-  end
+puts "Welcome to Tic Tac Toe!"
+game = Game.new
+until game.won?
+  game.play
 end
 
-def new_game?
-  if game.over?
-    puts "Play again? (y/n)"
-    again = gets.strip
-      if again.downcase == "y"
-        start
+
+puts "Play again? (y/n)"
+again = gets.strip
+  if again.downcase == "y"
+    game = Game.new
+    game.play
       elsif again.downcase == "n"
         puts "Good game!"
       else
@@ -28,11 +26,6 @@ end
 
 
 
-puts "Welcome to Tic Tac Toe!"
-game = Game.new
-until game.won?
-  game.play
-end
  play_again = ""
 until play_again.downcase == "n" || play_again.downcase == "no"
   puts "Would you like to play again?"
